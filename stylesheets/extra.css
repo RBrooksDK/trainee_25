@@ -1,0 +1,203 @@
+@font-face {
+  font-family: 'VIA Type';
+  src: url('../fonts/VIA Type Light.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'VIA Type';
+  src: url('../fonts/VIA Type Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'VIA Type';
+  src: url('../fonts/VIA Type Regular Italic.otf') format('opentype');
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'VIA Type';
+  src: url('../fonts/VIA Type Bold.otf') format('opentype');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'VIA Type';
+  src: url('../fonts/VIA Type Black.otf') format('opentype');
+  font-weight: 800;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'VIA Type Display';
+  src: url('../fonts/VIA Type Display.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'VIA Type Display';
+  src: url('../fonts/VIA Type Display B.otf') format('opentype');
+  font-weight: 600;
+  font-style: normal;
+}
+
+:root {
+  --md-text-font: 'VIA Type', Arial, sans-serif;
+}
+/* Dark mode ("slate") - VIA University College Inspired Theme */
+[data-md-color-scheme="slate"] {
+  --md-hue: 170; /* Teal hue for accent */
+
+  /* Background and Foreground */
+  --md-default-bg-color: #ffffff; /* White background */
+  --md-default-fg-color: #292929; /* Main text color */
+  --md-default-fg-color--light: #808080; /* Muted text */
+  --md-default-fg-color--lighter: #b3b3b3; /* Even lighter gray */
+
+  /* Primary color - Used for headers, active elements */
+  --md-primary-fg-color: #b3b3b3; /* Main header color */
+  --md-primary-fg-color--light: #808080;
+  --md-primary-bg-color: #292929; /* Light mint/teal background for highlights */
+  --md-primary-bg-color--light: #c6f3ec;
+
+  /* Accent color - Teal highlight (matches menu highlight) */
+  --md-accent-fg-color: #b2ede3;
+  --md-accent-fg-color--transparent: rgba(178,237,227,0.2);
+  --md-accent-bg-color: #b2ede3;
+  --md-accent-bg-color--light: #e6faf7;
+
+  /* --- Specific Overrides --- */
+
+  /* Link color - Use teal */
+  --md-typeset-a-color: #009688;
+
+  /* Code styling */
+  --md-code-fg-color: #292929;
+  --md-code-bg-color: #e6faf7;
+  --md-code-hl-color: #b2ede3;
+  --md-code-hl-keyword-color: #292929;
+  --md-code-hl-function-color: #808080;
+  --md-code-hl-string-color: #b2ede3;
+  --md-code-hl-number-color: #808080;
+  --md-code-hl-comment-color: #b3b3b3;
+
+  /* Admonition (standard) */
+  --md-admonition-fg-color: #292929;
+  --md-admonition-bg-color: #e6faf7;
+
+  /* Footer styling */
+  --md-footer-bg-color: #e6faf7;
+  --md-footer-fg-color: #292929;
+  --md-footer-fg-color--light: #808080;
+
+  /* List markers - Use dark gray */
+  ul ::marker,
+  ol ::marker {
+    color: #292929;
+  }
+}
+
+/* --- Shared Styles & Customizations --- */
+/* (Only showing the corrected Admonition part - keep others like icons, tables, links) */
+
+/* Custom Admonitions - Use Variables (FIXED RGBA) */
+.md-typeset .admonition.answer,
+.md-typeset details.answer,
+.md-typeset .admonition.question,
+.md-typeset details.question,
+.md-typeset .admonition.tip,
+.md-typeset details.tip {
+  border-color: var(--md-matrix-glow-color);
+  outline: none;
+  box-shadow: none;
+}
+
+.md-typeset .answer > .admonition-title,
+.md-typeset .answer > summary,
+.md-typeset .question > .admonition-title,
+.md-typeset .question > summary,
+.md-typeset .tip > .admonition-title,
+.md-typeset .tip > summary {
+  background-color: rgba(42, 157, 244, 0.1);
+  color: var(--md-matrix-glow-color);
+  outline: none;
+  box-shadow: none;
+}
+
+/* Icon color matches border/title text */
+.md-typeset .answer > .admonition-title::before,
+.md-typeset .answer > summary::before,
+.md-typeset .question > .admonition-title::before,
+.md-typeset .question > summary::before,
+.md-typeset .tip > .admonition-title::before,
+.md-typeset .tip > summary::before {
+  background-color: var(--md-matrix-glow-color);
+}
+.md-typeset .answer > .admonition-title::before,
+.md-typeset .answer > summary::before {
+   -webkit-mask-image: var(--md-admonition-icon--success);
+           mask-image: var(--md-admonition-icon--success);
+}
+
+.md-typeset .tip > .admonition-title::before,
+.md-typeset .tip > summary::before {
+   -webkit-mask-image: var(--md-admonition-icon--tip);
+           mask-image: var(--md-admonition-icon--tip);
+}
+
+/* Indicator matches border/title text */
+.md-typeset details[open].answer summary::after,
+.md-typeset details.answer summary::after,
+.md-typeset details[open].question summary::after,
+.md-typeset details.question summary::after,
+.md-typeset details[open].tip summary::after,
+.md-typeset details.tip summary::after {
+  color: var(--md-matrix-glow-color);
+}
+.md-header__button.md-logo {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.md-header__button.md-logo img, .md-header__button.md-logo svg {
+  height: 2.4rem;
+  width: 2.4rem;
+}
+
+.instructor-card img,
+div.grid img[style*="border-radius:50%"] {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+  border: 2px solid #009688 !important; /* Teal, matches link color */
+}
+
+@media (min-width: 1220px) {
+  .md-container {
+    max-width: 80vw;
+    margin-left: 10vw;
+    margin-right: 10vw;
+  }
+  .md-sidebar--primary {
+    left: 10vw;
+  }
+  .md-sidebar--secondary {
+    right: 10vw;
+  }
+  .md-main__inner {
+    max-width: 75vw;
+  }
+  .md-content {
+    max-width: 100vw;
+  }
+}
