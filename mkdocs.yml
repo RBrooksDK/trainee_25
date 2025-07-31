@@ -1,0 +1,145 @@
+# Project information
+site_name: Software Technology Trainee
+site_url: https://rbrooksdk.github.io/trainee_25
+site_author: Richard Brooks
+site_description: Kursusside for Software Technology
+docs_dir: .
+site_dir: ../site
+# Repository information
+repo_name: Github
+repo_url: https://github.com/RBrooksDK/trainee_25
+
+# Copyright
+copyright: Copyright &copy; 2025 Richard Brooks
+
+# Configurations
+theme:
+  name: material
+  language: da
+  # custom_dir: overrides
+  favicon:
+  logo: billeder/vialogo.png
+  icon:
+    repo: fontawesome/brands/github
+    annotation: material/chevron-right-circle
+  features:
+    - announce.dismiss
+    - content.code.annotate
+    - content.code.copy
+    # - content.code.select
+    # - content.footnote.tooltips
+    # - content.tabs.link
+    - content.tooltips
+    # - header.autohide
+    - navigation.expand
+    - navigation.footer
+    - navigation.indexes
+    - navigation.instant
+    - navigation.instant.prefetch
+    - navigation.instant.progress
+    - navigation.prune
+    # - navigation.sections
+    # - navigation.tabs
+    # - navigation.tabs.sticky
+    - navigation.top
+    - navigation.tracking
+    - search.highlight
+    - search.share
+    - search.suggest
+    - toc.follow
+    # - toc.integrate
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: custom
+      accent: orange
+      toggle:
+        icon: material/toggle-switch
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: custom
+      accent: orange
+      toggle:
+        icon: material/toggle-switch-off
+        name: Switch to light mode
+
+plugins:
+  - same-dir
+  - blog
+  - search
+  - mkdocs_quiz
+  - glightbox
+
+# Extensions
+markdown_extensions:
+  - admonition
+  - abbr
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - toc:
+      permalink: true
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.snippets:
+      auto_append:
+        - includes/mkdocs.md
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+
+extra_javascript:
+  - javascripts/mathjax.js
+  - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
+
+extra:
+  status:
+    new: Recently added
+    deprecated: Deprecated
+  analytics:
+    provider: google
+    property: !ENV GOOGLE_ANALYTICS_KEY
+
+extra_css:
+  - stylesheets/extra.css
+
+nav:
+  - Forside: README.md
+  - 1. Semester:
+    - 01_Semester/README.md
+    - MSE1: 01_Semester/MSE1.md
+    - PRO1: 01_Semester/PRO1.md
+    - SEP1: 01_Semester/SEP1.md
+    - WEB1: 01_Semester/WEB1.md
+    - WS1: 01_Semester/WS1.md
+  - 2. Semester:
+    - 02_Semester/README.md
+    - DBS1: 02_Semester/DBS1.md
+    - NEC1: 02_Semester/NEC1.md
+    - PRO2: 02_Semester/PRO2.md
+    - SEP2: 02_Semester/SEP2.md
+    - STA1: 02_Semester/STA1.md
+    - WS2: 02_Semester/WS2.md
+  - FAQ: pages/faq.md
